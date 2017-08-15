@@ -1,0 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+header{
+  padding: 10px 25px;
+}
+
+main{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.eachUser{
+  border: 1px solid black;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  width: 25%;
+}
