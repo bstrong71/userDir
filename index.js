@@ -14,6 +14,11 @@ app.get('/users', function (req, res) {
   res.render('index', { userList: data.users});
 });
 
+app.get('/listing/:id', function (req, res) {
+  res.render('user_profile', {});
+});
+
+
 app.listen(3000, function() {
   console.log("App is running on localhost:3000");
 })
