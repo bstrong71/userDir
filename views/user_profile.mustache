@@ -2,16 +2,37 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>User Profile</title>
     <link rel="stylesheet" href="../public/style.css">
   </head>
   <body>
-    <div class="userProf">
-      <img src={{avatar}}>
-      <h2>{{name}}</h2>
-      <p>{{job}}, {{company}}</p>
+    <div class="wrapper">
+      <div class="userProf">
+        {{^university}}
+          <img class="pic" src={{avatar}}>
+          <h2 class="proName">{{name}}</h2>
+          <p>{{address.country}}  |  {{job}}, {{company}}</p>
+          <p>{{email}}  |  {{phone}}</p>
+          <p id="skills">Skills  {{skills}}</p>
+        {{/university}}
+        {{#job}}
+          <img class="pic" src={{avatar}}>
+          <h2 class="proName">{{name}}</h2>
+          <p>{{address.city}}, {{address.country}}  |  {{job}}, {{company}}</p>
+          <p>{{email}}  |  {{phone}}</p>
+          <p id="education">Education  {{university}}</p>
+          <p id="skills">Skills  {{skills}}</p>
+        {{/job}}
+        {{^job}}
+          <img class="pic" src={{avatar}}>
+          <h2 class="proName">{{name}}</h2>
+          <p>{{address.city}}, {{address.country}}  |  Available for hire</p>
+          <p>{{email}}  |  {{phone}}</p>
+          <p id="education">Education    {{university}}</p>
+          <p id="skills">Skills    {{skills}}</p>
+        {{/job}}
 
-      <p>Available for hire</p>
+      </div>
     </div>
   </body>
 </html>

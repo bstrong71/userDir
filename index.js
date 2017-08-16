@@ -15,7 +15,8 @@ app.get('/users', function (req, res) {
 });
 
 app.get('/listing/:id', function (req, res) {
-  res.render('user_profile', {});
+  console.log('listing');
+  res.render('user_profile', data.users[req.params.id -1]);
 });
 
 

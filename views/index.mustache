@@ -11,15 +11,15 @@
     </header>
     <main>
       {{#userList}}
-        <a href="/listing/{{id}}">
+        <a class="content" href="/listing/{{id}}">
           <div class="eachUser">
             <img src={{avatar}}>
             <h2>{{name}}</h2>
             {{#job}}
-              <p>{{job}}, {{company}}</p>
+              <p id="jobp">{{job}}, {{company}}</p>
             {{/job}}
             {{^job}}
-              <p>Available for hire</p>
+              <p id="hirep">Available for hire</p>
             {{/job}}
           </div>
         </a>
