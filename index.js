@@ -10,13 +10,17 @@ app.set('view engine', 'mustache');
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
-app.get('/users', function (req, res) {
+app.get('/', function (req, res) {
   res.render('index', { userList: data.users});
 });
 
-app.get('/listing/:id', function (req, res) {
-  console.log('listing');
-  res.render('user_profile', data.users[req.params.id -1]);
+app.get('/user/:id', function (req, res) {
+  let id = req.params.id;
+
+  let userP = data.users.find(function(user) {
+    return user.id == id; //return any user that equals the user.id//
+  });                      //.find requires two equals//
+  res.render('profile', userP);
 });
 
 
